@@ -5,7 +5,6 @@ notifications:
 
 script:
 - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
-- npm run lint
 
 git:
   depth: 10
