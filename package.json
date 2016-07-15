@@ -1,0 +1,25 @@
+{
+  "name": "textlint-auto-fixer",
+  "main": "./lib/textlint-auto-fixer",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/atom/textlint-auto-fixer",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "textlint": "^7.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
+    "temp": "^0.8.3",
+    "textlint-rule-common-misspellings": "^1.0.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "apm test"
+  }
+}

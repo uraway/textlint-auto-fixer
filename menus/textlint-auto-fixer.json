@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle textlint-auto-fixer",
+        "command": "textlint-auto-fixer:fix-current-file"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "textlint-auto-fixer",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "textlint-auto-fixer:fix-current-file"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
