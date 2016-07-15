@@ -17,8 +17,5 @@
     "eslint-config-airbnb-base": "^4.0.0",
     "temp": "^0.8.3",
     "textlint-rule-common-misspellings": "^1.0.1"
-  },
-  "scripts": {
-    "lint": "eslint ./lib/*"
   }
 }
