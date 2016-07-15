@@ -24,7 +24,3 @@ env:
   matrix:
     - ATOM_CHANNEL=stable
     - ATOM_CHANNEL=beta
-
-branches:
-  only:
-    - master
