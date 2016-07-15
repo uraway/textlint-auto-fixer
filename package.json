@@ -19,7 +19,7 @@
     "textlint-rule-common-misspellings": "^1.0.1"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint ./lib/*",
     "test": "apm test"
   }
 }
