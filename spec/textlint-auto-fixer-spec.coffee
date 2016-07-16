@@ -21,10 +21,10 @@ describe "TextlintAutoFixer", ->
 
     runs ->
       buffer = editor.getBuffer()
-
+    ### after v0.0.1 release
     waitsForPromise ->
       atom.packages.activatePackage("textlint-auto-fixer")
-
+    ###
   describe "when 'fixOnSave' is false", ->
     beforeEach ->
       atom.config.set("textlint-auto-fixer.fixOnSave", false)
