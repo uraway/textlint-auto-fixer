@@ -2,6 +2,14 @@
 
 [![Build Status](https://travis-ci.org/uraway/textlint-auto-fixer.svg?branch=master)](https://travis-ci.org/uraway/textlint-auto-fixer)
 
-WIP
+Fixes your file by [textlint](https://textlint.github.io/).
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![fix-demo](https://cloud.githubusercontent.com/assets/15242484/16922478/a222fcea-4d50-11e6-9095-adec0e7bd945.gif)
+
+## Installation
+
+```
+apm install textlint-auto-fixer
+```
+
+`textlint-auto-fixer` will look for `textlint` binary and `.textlintrc` local to your project by default.
