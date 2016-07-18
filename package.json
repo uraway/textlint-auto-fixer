@@ -1,9 +1,11 @@
 {
   "name": "textlint-auto-fixer",
   "main": "./lib/textlint-auto-fixer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A short description of your package",
-  "keywords": ["textlint"],
+  "keywords": [
+    "textlint"
+  ],
   "repository": "https://github.com/uraway/textlint-auto-fixer",
   "author": {
     "name": "Masato Urai",
