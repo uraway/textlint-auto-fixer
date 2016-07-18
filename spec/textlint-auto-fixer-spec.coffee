@@ -21,10 +21,10 @@ describe "TextlintAutoFixer", ->
 
     runs ->
       buffer = editor.getBuffer()
-    ### after v0.0.1 release
+
     waitsForPromise ->
       atom.packages.activatePackage("textlint-auto-fixer")
-    ###
+
   describe "when 'fixOnSave' is false", ->
     beforeEach ->
       atom.config.set("textlint-auto-fixer.fixOnSave", false)
@@ -35,7 +35,7 @@ describe "TextlintAutoFixer", ->
       waitsForPromise ->
         engine.executeOnFiles([editor.getPath()]).then (results) ->
           expect(results[0].messages.length).toBe(0)
-###
+
   describe "when 'fixOnSave' is true", ->
     beforeEach ->
       atom.config.set("textlint-auto-fixer.fixOnSave", true)
@@ -47,4 +47,3 @@ describe "TextlintAutoFixer", ->
       waitsForPromise ->
         engine.executeOnFiles([editor.getPath()]).then (results) ->
           expect(results[0].messages.length).toBe(0)
-###
