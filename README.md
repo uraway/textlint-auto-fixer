@@ -8,7 +8,7 @@ Fixes your file by [textlint](https://textlint.github.io/).
 
 ## Installation
 
-```
+```bash
 apm install textlint-auto-fixer
 ```
 

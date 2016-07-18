@@ -3,8 +3,12 @@
   "main": "./lib/textlint-auto-fixer",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "keywords": [],
-  "repository": "https://github.com/atom/textlint-auto-fixer",
+  "keywords": ["textlint"],
+  "repository": "https://github.com/uraway/textlint-auto-fixer",
+  "author": {
+    "name": "Masato Urai",
+    "url": "http://uraway.hatenablog.com/"
+  },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
