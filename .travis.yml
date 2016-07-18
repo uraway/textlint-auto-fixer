@@ -1,6 +1,18 @@
-language: node_js
-node_js:
-  - "6"
-script:
-  - npm run lint
-  - npm run test
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+
+git:
+  depth: 10
+
+sudo: false
+
+env:
+  global:
+    - APM_TEST_PACKAGES=""
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - git
+    - libgnome-keyring-dev
+    - fakeroot
