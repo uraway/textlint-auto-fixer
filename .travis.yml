@@ -1,18 +1,3 @@
+language: objective-c
+
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
-
-git:
-  depth: 10
-
-sudo: false
-
-env:
-  global:
-    - APM_TEST_PACKAGES="textlint-auto-fixer"
-
-addons:
-  apt:
-    packages:
-    - build-essential
-    - git
-    - libgnome-keyring-dev
-    - fakeroot
