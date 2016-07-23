@@ -20,6 +20,7 @@ describe "TextlintAutoFixer", ->
 
     atom.config.set("textlint-auto-fixer.textlintPath", textlintPath)
     atom.config.set("textlint-auto-fixer.textlintConfigPath", textlintConfigPath)
+    atom.config.set("textlint-auto-fixer.fixOnSave", false)
 
     waitsForPromise ->
       atom.workspace.open(filePath).then (o) -> editor = o
