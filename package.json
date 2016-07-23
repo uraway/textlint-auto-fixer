@@ -1,7 +1,7 @@
 {
   "name": "textlint-auto-fixer",
   "main": "./lib/textlint-auto-fixer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Fix textlint errors",
   "keywords": [
     "textlint"
