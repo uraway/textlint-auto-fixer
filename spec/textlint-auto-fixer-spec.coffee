@@ -3,8 +3,8 @@ fs = require "fs"
 temp = require "temp"
 {TextLintEngine} = require "textlint"
 
-textlintPath = path.join(__dirname, "..", "node_modules", ".bin", "textlint")
-textlintConfigPath = path.join(__dirname, "..", ".textlintrc")
+textlintPath = path.join(__dirname, "node_modules", ".bin", "textlint")
+textlintConfigPath = path.join(__dirname, ".textlintrc")
 engine = new TextLintEngine({
   configFile: textlintConfigPath
 })
@@ -36,7 +36,13 @@ describe "TextlintAutoFixer", ->
       atom.config.set("textlint-auto-fixer.fixOnSave", false)
 
     it "manually fix errors", ->
+      bufferChangedSpy = jasmine.createSpy()
+      buffer.onDidChange(bufferChangedSpy)
+
       atom.commands.dispatch(workspaceElement, "textlint-auto-fixer:fix-current-file")
+
+      waitsFor ->
+        bufferChangedSpy.callCount > 0
 
       runs ->
         expect(buffer.getText()).toBe "Isn\'t She Lovely"
@@ -47,7 +53,13 @@ describe "TextlintAutoFixer", ->
       atom.config.set("textlint-auto-fixer.fixOnSave", true)
 
     it "fix errors on save", ->
+      bufferChangedSpy = jasmine.createSpy()
+      buffer.onDidChange(bufferChangedSpy)
+
       editor.save()
+
+      waitsFor ->
+        bufferChangedSpy.callCount > 0
 
       runs ->
         expect(buffer.getText()).toBe "Isn\'t She Lovely"
