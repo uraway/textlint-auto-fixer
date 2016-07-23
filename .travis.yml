@@ -7,7 +7,7 @@ sudo: false
 
 env:
   global:
-    - APM_TEST_PACKAGES=""
+    - APM_TEST_PACKAGES="textlint-auto-fixer"
 
 addons:
   apt:
