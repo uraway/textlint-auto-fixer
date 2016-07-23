@@ -2,7 +2,7 @@
   "name": "textlint-auto-fixer",
   "main": "./lib/textlint-auto-fixer",
   "version": "0.1.2",
-  "description": "A short description of your package",
+  "description": "Fix textlint errors",
   "keywords": [
     "textlint"
   ],
