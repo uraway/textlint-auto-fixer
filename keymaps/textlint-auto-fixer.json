@@ -1,5 +1,4 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "textlint-auto-fixer:fix-current-file"
   }
 }
