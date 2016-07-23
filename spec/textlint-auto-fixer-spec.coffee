@@ -1,18 +1,23 @@
 path = require "path"
+fs = require "fs"
+temp = require "temp"
 {TextLintEngine} = require "textlint"
 
-textlintPath = path.join(__dirname, "node_modules", "textlint", "bin", "textlint.js")
-textlintConfigPath = path.join(__dirname, ".textlintrc")
-filePath = path.join(__dirname, "fixtures", "fix.md")
+textlintPath = path.join(__dirname, "..", "node_modules", ".bin", "textlint")
+textlintConfigPath = path.join(__dirname, "..", ".textlintrc")
 engine = new TextLintEngine({
   configFile: textlintConfigPath
 })
 
 describe "TextlintAutoFixer", ->
-  [editor, buffer, workspaceElement] = []
+  [editor, buffer, workspaceElement, filePath, activatePromise] = []
 
   beforeEach ->
+    directory = atom.project.rootDirectories[0]
     workspaceElement = atom.views.getView(atom.workspace)
+    filePath = directory.resolve("./fix.md")
+    fs.writeFileSync(filePath, "")
+
     atom.config.set("textlint-auto-fixer.textlintPath", textlintPath)
     atom.config.set("textlint-auto-fixer.textlintConfigPath", textlintConfigPath)
 
@@ -27,24 +32,22 @@ describe "TextlintAutoFixer", ->
 
   describe "when 'fixOnSave' is false", ->
     beforeEach ->
+      buffer.setText("Isnt She Lovely")
       atom.config.set("textlint-auto-fixer.fixOnSave", false)
 
-    it "fix errors", ->
-      editor.setText("Isnt She Lovely")
+    it "manually fix errors", ->
       atom.commands.dispatch(workspaceElement, "textlint-auto-fixer:fix-current-file")
-      waitsForPromise ->
-        engine.executeOnFiles([editor.getPath()]).then (results) ->
-          expect(results[0].messages.length).toBe(0)
-###
+
+      runs ->
+        expect(buffer.getText()).toBe "Isn\'t She Lovely"
+
   describe "when 'fixOnSave' is true", ->
     beforeEach ->
+      buffer.setText("Isnt She Lovely")
       atom.config.set("textlint-auto-fixer.fixOnSave", true)
 
     it "fix errors on save", ->
-      editor.setText("Isnt She Lovely")
       editor.save()
-      expect(editor.getText()).toBe "Isn\'t She Lovely"
-      waitsForPromise ->
-        engine.executeOnFiles([editor.getPath()]).then (results) ->
-          expect(results[0].messages.length).toBe(0)
-###
+
+      runs ->
+        expect(buffer.getText()).toBe "Isn\'t She Lovely"
