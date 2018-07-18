@@ -1,5 +1,8 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
   "globals": {
     "atom": "true"
   },
@@ -8,6 +11,13 @@
     "node": true
   },
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ],
     "no-new": 0,
     "array-callback-return": 0,
     "no-console": 0,
