@@ -25,6 +25,7 @@
   "devDependencies": {
     "eslint": "^2.13.1",
     "eslint-config-airbnb-base": "3.0.1",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "textlint-rule-common-misspellings": "^1.0.1"
   }
