@@ -1,18 +1,12 @@
+language: objective-c
+
+notifications:
+  slack: tnishida-lab:1TOX0JWUcL6nMq85gq3yLRiV
+
+env:
+  - APM_TEST_PACKAGES="textlint-auto-fixer"
+
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
 
 git:
   depth: 10
-
-sudo: false
-
-env:
-  global:
-    - APM_TEST_PACKAGES="textlint-auto-fixer"
-
-addons:
-  apt:
-    packages:
-    - build-essential
-    - git
-    - libgnome-keyring-dev
-    - fakeroot
